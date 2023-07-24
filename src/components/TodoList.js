@@ -12,7 +12,7 @@ function MemoApp() {
     
      
       const handleAddTodo = () => {
-        setTodos(prevTodos => [...prevTodos, { id: todos.length + 1, content: 'New todo' }]);
+        setTodos(prevTodos => [...prevTodos, { id: todos.length + 1, content: 'New Todo' }]);
       };
     
            const handleIncrement = () => {
@@ -32,7 +32,7 @@ function MemoApp() {
     
       return (
         <div id="main">
-          <h2 id="item-jumbotron">Todo List</h2>
+          <h2 id="item-jumbotron">jumbotron</h2>
           <ul id="todo-0">
             {todos.map(todo => (
               <li key={todo.id}>{todo.content}</li>
@@ -57,7 +57,7 @@ function MemoApp() {
               placeholder="Enter text (min. 5 characters)"
             />
             <button id="skill-btn" onClick={handleAddItem}>
-              Submit
+            1000000000
             </button>
           </div>
         </div>
