@@ -57,7 +57,7 @@ function MemoApp() {
               placeholder="Enter text (min. 5 characters)"
             />
             <button id="skill-btn" onClick={handleAddItem}>
-            1000000000
+            1000000001
             </button>
           </div>
         </div>
