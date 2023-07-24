@@ -45,7 +45,7 @@ function MemoApp() {
     
           <div id="incr-cnt">
             <p>Count: {count}</p>
-            <button onClick={handleIncrement}>0</button>
+            <button id='incr-btn' onClick={handleIncrement}>0</button>
           </div>
     
           <div id="calc">
