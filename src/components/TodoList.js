@@ -4,7 +4,7 @@ function MemoApp() {
   const [count, setCount] = useState(0);
   const [memoText, setMemoText] = useState("");
   const [memoItems, setMemoItems] = useState([]);
-
+  const [memoItems2, setMemoItems2] = useState([]);
   function handleAddTodo() {
     setMemoItems([...memoItems, "New todo"]);
   }
@@ -19,16 +19,20 @@ function MemoApp() {
 
   function handleSubmit() {
     if (memoText!=='') {
-      setMemoItems([...memoItems, memoText]);
+      setMemoItems2([...memoItems2, memoText]);
       setMemoText("");
     }
   }
 
   return (
-    <div>
+    <div id="main">
       <h2>Memo</h2>
+      <button id="add-todo-btn" onClick={handleAddTodo}>Add todo</button>
+      {memoItems.map((todo, index) => (
+         <p key={index}>{todo}</p>
+      ))}
       <p>Count: {count}</p>
-      <button id="incr-cnt" onClick={handleIncrement}>Increment</button>
+      <button id="incr-cnt" onClick={handleIncrement}>0</button>
       <br />
       <br />
       <input
@@ -36,15 +40,15 @@ function MemoApp() {
         value={memoText}
         onChange={handleInputChange}
        
-        id="memo-input" 
+        id="skill-input" 
       />
       <button id="memo-submit" onClick={handleSubmit}>Submit</button>
       <br />
       <br />
-      <button id="add-todo-btn" onClick={handleAddTodo}>Add todo</button>
+      
       <ul>
-        {memoItems.map((item, index) => (
-          <li key={index}>{item}</li>
+        {memoItems2.map((item, index) => (
+          <li key={index} id={"todo"-item.lenth +1}>{item}</li>
         ))}
       </ul>
     </div>
