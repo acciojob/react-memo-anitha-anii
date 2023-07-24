@@ -1,2 +1,14 @@
-<p>Now I can render any React component on any DOM node I want using ReactDOM.render</p>
+import React from "react";
+import Addtodo from "./Addtodo";
+import TodoList from "./TodoList";
 
+function App(){
+    return(
+        <div>
+    <Addtodo />
+    <TodoList />
+        </div>
+    )
+}
+
+export default App;
