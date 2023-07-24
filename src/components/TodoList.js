@@ -32,7 +32,7 @@ function MemoApp() {
          <p key={index}>{todo}</p>
       ))}
       <p>Count: {count}</p>
-      <button id="incr-cnt" onClick={handleIncrement}>0</button>
+      <button id="calc" onClick={handleIncrement}>0</button>
       <br />
       <br />
       <input
@@ -42,13 +42,13 @@ function MemoApp() {
        
         id="skill-input" 
       />
-      <button id="memo-submit" onClick={handleSubmit}>Submit</button>
+      <button id="skill-btn" onClick={handleSubmit}>Submit</button>
       <br />
       <br />
       
       <ul>
         {memoItems2.map((item, index) => (
-          <li key={index} id={"todo"-item.lenth +1}>{item}</li>
+          <li key={index} id={`todo-${index}`} >{item}</li>
         ))}
       </ul>
     </div>
