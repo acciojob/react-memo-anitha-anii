@@ -1,67 +1,62 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/App.css';
 
-function MemoApp() {
-  const [todos, setTodos] = useState([]);
+const MemoApp = () => {
+  const [todos, setTodos] = useState([{ id: 1, content: 'New todo' }]);
   const [count, setCount] = useState(0);
+  const [memoText, setMemoText] = useState('');
   const [inputText, setInputText] = useState('');
 
   useEffect(() => {
-    document.title = `Count: ${count}`;
+    document.title = `Memo App (${count} count)`;
   }, [count]);
 
   const handleAddTodo = () => {
-    setTodos(prevTodos => [...prevTodos, { id: todos.length + 1, content: 'New Todo' }]);
+    const newTodoId = todos.length + 1;
+    const newTodo = { id: newTodoId, content: 'New todo' };
+    setTodos([...todos, newTodo]);
   };
 
   const handleIncrement = () => {
-    setCount(prevCount => prevCount + 1);
+    setCount(count + 1);
   };
 
-  const handleInputChange = event => {
-    setInputText(event.target.value);
+  const handleMemoInputChange = (event) => {
+    setMemoText(event.target.value);
   };
 
-  const handleAddItem = () => {
-    if (inputText.length > 5) {
-      setTodos(prevTodos => [...prevTodos, { id: todos.length + 1, content: inputText }]);
-      setInputText('');
+  const handleAddMemoItem = () => {
+    if (memoText.length > 5) {
+      const newMemoItem = { id: todos.length + 1, content: memoText };
+      setTodos([...todos, newMemoItem]);
+      setMemoText('');
     }
   };
 
   return (
-    <div id="main">
-      <h2 id="item-jumbotron">jumbotron</h2>
-      <ul id="todo-0">
-        {todos.map(todo => (
-          <li key={todo.id}>{todo.content}</li>
-        ))}
-      </ul>
-
-      <button id="add-todo-btn" onClick={handleAddTodo}>
-        Add Todo
-      </button>
-
-      <div id="incr-cnt">
-        <p>Count: {count}</p>
-        <button id="incr-btn" onClick={handleIncrement}>
-          {count}
-        </button>
-      </div>
-
-      <div id="calc">
+    <div className="memo-app">
+      <h1>Memo App</h1>
+      <button onClick={handleAddTodo}>Add Todo</button>
+      <p className='count'>Count: {count}</p>
+      <button onClick={handleIncrement}>+</button>
+      <div className="memo-container">
+        <h2>Memo</h2>
         <input
-          id="skill-input"
           type="text"
-          value={inputText}
-          onChange={handleInputChange}
-          placeholder="Enter text (min. 5 characters)"
+          value={memoText}
+          onChange={handleMemoInputChange}
+          placeholder="Enter memo text (min. 6 characters)"
         />
-        <button id="skill-btn" onClick={handleAddItem}>
-          1000000001
-        </button>
+        <button onClick={handleAddMemoItem}>Add Memo Item</button>
+        <ul>
+          {todos.map((todo) => (
+            <li key={todo.id}>{todo.content}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
-}
+};
 
 export default MemoApp;
+
