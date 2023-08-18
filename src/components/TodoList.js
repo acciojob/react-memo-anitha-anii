@@ -34,20 +34,20 @@ const MemoApp = () => {
   };
 
   return (
-    <div className="memo-app">
-      <h1>Memo App</h1>
-      <button onClick={handleAddTodo}>Add Todo</button>
+    <div id="main">
+      <h1>My todos</h1>
+      <button onClick={handleAddTodo} id='add-todo-btn'>Add Todo</button>
       <p className='count'>Count: {count}</p>
-      <button onClick={handleIncrement}>+</button>
+      <button onClick={handleIncrement} id='incr-cnt'>+</button>
       <div className="memo-container">
-        <h2>Memo</h2>
+        <h2>React.memo</h2>
         <input
           type="text"
           value={memoText}
           onChange={handleMemoInputChange}
           placeholder="Enter memo text (min. 6 characters)"
         />
-        <button onClick={handleAddMemoItem}>Add Memo Item</button>
+        <button onClick={handleAddMemoItem} id='skill-input'>Add skill</button>
         <ul>
           {todos.map((todo) => (
             <li key={todo.id}>{todo.content}</li>
