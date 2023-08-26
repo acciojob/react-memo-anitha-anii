@@ -54,14 +54,14 @@ function App() {
     <div className="App" id="main">
       <h2>React.useMemo</h2>
       <h2>My Todos</h2>
-      {todos.map((todo, index) => (
-        <Todo key={index} text={todo} id={`todo-${index}`}/>
+      {todos.map((todo) => (
+        <Todo key={index} text={todo} id={`todo-${id}`}/>
       ))}
       <p>
         <button onClick={handleAddTodo} id="add-todo-btn">Add Todo</button>
       </p>
-      <p>Count: {count}</p>
-      <button onClick={handleIncrement} id="incr-cnt">0</button>
+      <p id="incr-cnt">Count: {count}</p>
+      <button onClick={handleIncrement} id='incr-btn'>0</button>
       <h2>Expensive Calculation</h2>
       <p id='calc'>{1_000_000_000}</p>
       <h2>React.memo</h2>
@@ -75,7 +75,7 @@ function App() {
         ))}
       </ul>
       <div id="item-jumbotron">
-       
+      jumbotron
       </div>
     </div>
   );
