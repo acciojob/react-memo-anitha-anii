@@ -38,7 +38,7 @@ const MemoApp = () => {
       <h1>My todos</h1>
       <button onClick={handleAddTodo} id='add-todo-btn'>Add Todo</button>
       <p className='count'>Count: {count}</p>
-      <button onClick={handleIncrement} id='incr-cnt'>+</button>
+      <button onClick={handleIncrement} id='incr-cnt'>0</button>
       <div className="memo-container">
         <h2>React.memo</h2>
         <input
@@ -47,10 +47,10 @@ const MemoApp = () => {
           onChange={handleMemoInputChange}
           placeholder="Enter memo text (min. 6 characters)"
         />
-        <button onClick={handleAddMemoItem} id='skill-input'>Add skill</button>
+        <button onClick={handleAddMemoItem} id='skill-btn'>Add skill</button>
         <ul>
           {todos.map((todo) => (
-            <li key={todo.id}>{todo.content}</li>
+            <li key={todo-id}>{todo.content}</li>
           ))}
         </ul>
       </div>
