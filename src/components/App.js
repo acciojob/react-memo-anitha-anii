@@ -51,23 +51,23 @@ function App() {
   }, [count]);
 
   return (
-    <div className="App">
+    <div className="App" id="main">
       <h2>React.useMemo</h2>
       <h2>My Todos</h2>
       {todos.map((todo, index) => (
         <Todo key={index} text={todo} />
       ))}
       <p>
-        <button onClick={handleAddTodo} id='add-todo-btn'>Add Todo</button>
+        <button onClick={handleAddTodo} id="add-todo-btn">Add Todo</button>
       </p>
       <p>Count: {count}</p>
-      <button onClick={handleIncrement} id='incr-cnt'>+</button>
+      <button onClick={handleIncrement} id="incr-cnt">0</button>
       <h2>Expensive Calculation</h2>
       <p>{1_000_000_000}</p>
       <h2>React.memo</h2>
       <div>
-        <input type="text" value={inputSkill} onChange={handleSkillChange} id='skill-input'/>
-        <button onClick={handleSkillSubmit} id='skill-btn'>Add Skill</button>
+        <input type="text" value={inputSkill} onChange={handleSkillChange} id="skill-input" />
+        <button onClick={handleSkillSubmit} id="skill-btn">Add Skill</button>
       </div>
       <ul>
         {skills.map((skill, index) => (
