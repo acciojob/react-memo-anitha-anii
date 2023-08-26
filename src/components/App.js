@@ -55,7 +55,7 @@ function App() {
       <h2>React.useMemo</h2>
       <h2>My Todos</h2>
       {todos.map((todo, index) => (
-        <Todo key={index} text={todo} />
+        <Todo key={index} text={todo} id={`todo-${index}`}/>
       ))}
       <p>
         <button onClick={handleAddTodo} id="add-todo-btn">Add Todo</button>
@@ -63,7 +63,7 @@ function App() {
       <p>Count: {count}</p>
       <button onClick={handleIncrement} id="incr-cnt">0</button>
       <h2>Expensive Calculation</h2>
-      <p>{1_000_000_000}</p>
+      <p id='calc'>{1_000_000_000}</p>
       <h2>React.memo</h2>
       <div>
         <input type="text" value={inputSkill} onChange={handleSkillChange} id="skill-input" />
@@ -71,9 +71,12 @@ function App() {
       </div>
       <ul>
         {skills.map((skill, index) => (
-          <MemoSkill key={index} skill={skill} />
+          <MemoSkill key={index} skill={skill} id={`todo-${index}`}/>
         ))}
       </ul>
+      <div id="item-jumbotron">
+       
+      </div>
     </div>
   );
 }
